@@ -1,0 +1,90 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Website menu 05</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{% static 'css home/style.css' %}">
+
+	</head>
+	<body style="background-color: antiquewhite;">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-1">
+					<h2 class="heading-section"><strong>Home page</strong></h2>
+				</div>
+			</div>
+		</div>
+		<div class="">
+			<nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
+		    <div class="container">
+		    	<a class="navbar-brand" href="">Logo</a>
+		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="fa fa-bars"></span> Menu
+		      </button>
+		      <div class="collapse navbar-collapse" id="ftco-nav">
+		        <ul class="navbar-nav ml-auto mr-md-3">
+		        	<li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+		        	<li class="nav-item"><a href="#" class="nav-link">Accessories</a></li>
+		        	<li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
+		        	<li class="nav-item"><a href="#" class="nav-link">Products</a></li>
+		          <li class="nav-item"><a href="/logout/" class="nav-link">Logout</a></li>
+		          <li class="dropdown nav-item d-md-flex align-items-center">
+                <a href="#" class="dropdown-toggle nav-link d-flex align-items-center justify-content-center icon-cart p-0" id="dropdown04" data-toggle="dropdown" aria-expanded="false">
+                  <i class="fa fa-shopping-cart"></i>
+                  <b class="caret"></b>
+                </a>
+				
+              </li>
+		        </ul>
+		      </div>
+		    </div>
+		  </nav>
+    <!-- END nav -->
+  </div>
+
+	</section>
+
+
+
+	  <section>
+		  <div class="container">
+			  <div class="row d-flex flex-row justify-content-around">
+
+				{% for mob in mobes %}
+				<div class="card mb-5"  style="width: 18rem;  border-radius: 20px;">
+					<img src="https://images.samsung.com/is/image/samsung/p6pim/in/sm-m326bzbiins/gallery/in-galaxy-m32-5g-6gb-ram-sm-m326bzbiins-497616034?$684_547_PNG$" class="card-img-top" alt="...">
+					
+					<div class="card-body">
+					  <h5 class="card-title">{{mob.name}}</h5>
+					  <h6 class="card-title" style="color: blue;">${{mob.price}}</h6>
+					  <p class="card-text">{{mob.descr}}</p>
+					  <a href="#" class="btn btn-primary">Buy</a>
+					</div>
+					
+				  </div>
+				{% endfor %}
+				
+
+			
+
+			  </div>
+
+		  </div>
+	  </section>
+
+	<script src="{% static 'js home/jquery.min.js' %}"></script>
+  <script src="{% static 'js home/popper.js' %}"></script>
+  <script src="{% static 'js home/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js home/main.js' %}"></script>
+
+	</body>
+</html>
+
